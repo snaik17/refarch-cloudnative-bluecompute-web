@@ -5,7 +5,7 @@
 */
 
 // Pod Template
-def podLabel = "web"
+def podLabel = "waiting-game-${UUID.randomUUID().toString()}"
 def cloud = env.CLOUD ?: "kubernetes"
 def registryCredsID = env.REGISTRY_CREDENTIALS ?: "registry-credentials-id"
 def serviceAccount = env.SERVICE_ACCOUNT ?: "jenkins"
