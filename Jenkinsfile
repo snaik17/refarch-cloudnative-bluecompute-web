@@ -26,6 +26,7 @@ podTemplate(label: podLabel, cloud: cloud, serviceAccount: serviceAccount, names
     ],
     volumes: [
         emptyDirVolume(mountPath: '/var/lib/docker', memory: false)
+        hostPathVolume(hostPath: '/etc/docker/certs.d', mountPath: '/etc/docker/certs.d')
     ],
     containers: [
         containerTemplate(name: 'kubectl', image: 'lachlanevenson/k8s-kubectl', ttyEnabled: true, command: 'cat'),
